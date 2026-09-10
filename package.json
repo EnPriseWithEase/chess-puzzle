@@ -1,0 +1,25 @@
+{
+  "name": "chess-puzzle",
+  "version": "1.0.0",
+  "description": "An interactive chess template for Anki",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --dev"
+  },
+  "keywords": ["chess", "anki", "puzzle", "pgn"],
+  "author": "",
+  "license": "GPL-3.0",
+  "type": "commonjs",
+  "dependencies": {
+    "@lichess-org/pgn-viewer": "^2.4.7",
+    "@mliebelt/pgn-parser": "^1.4.18",
+    "chess.js": "^1.4.0",
+    "chessground": "^9.2.1",
+    "stockfish": "^17.1.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.9",
+    "glob": "^11.0.3"
+  }
+}
