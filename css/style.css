@@ -1,0 +1,101 @@
+:root {
+    --coord-white: rgba(255, 255, 255, 0.8);
+    --coord-black: rgba(72, 72, 72, 0.8);
+    --background-color: transparent;
+    --board-size: min(max(calc(98vh - 12px), 300px), max(calc(98vw - 12px), 200px), 600px);
+    --border-color: #808080;
+    --opponent-color: black;
+    --player-color: white;
+    --border-shadow: LightSlateGrey;
+    --timer-color: #b31010;
+    --max-width: min(100vw, 1000px);
+    --centipawn: 50%;
+    --remainingTime: 0%;
+}
+
+body {
+    background: var(--background-color);
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#container {
+    margin-right: 15px;
+    gap: 4px;
+    width: var(--max-width);
+    grid-template-areas: "one two";
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    justify-content: center;
+}
+
+#commentBox {
+    grid-area: one;
+    padding: 0px;
+    font-family: serif;
+    width: calc(var(--max-width) - var(--board-size) - 30px);
+    box-shadow: 0px 0px 3px 0px black;
+    background: #242424;
+    color: #D7DEE9;
+    border-radius: 4px;
+    max-height: calc(var(--board-size) + 14px);
+    margin-top: 1px;
+    overflow: scroll;
+    box-sizing: border-box;
+}
+
+#board-container {
+    grid-area: two;
+    max-width: 600px;
+}
+
+.cg-wrap {
+    width: var(--board-size);
+    height: var(--board-size);
+    box-shadow: 0px 0px 3px 0px grey;
+    border: 8px solid var(--border-color);
+    border-radius: 4px;
+    position: relative;
+    margin: 0 auto;
+    display: block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+button.navBtn {
+    z-index: 20;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid black;
+    background-color: #242424;
+    color: #D7DEE9;
+    box-shadow: 0px 0px 3px 0px black;
+    height: calc(var(--board-size) * 0.1);
+    width: calc(var(--board-size) * 0.1);
+    max-width: 50px;
+    max-height: 50px;
+    margin: 3px;
+    cursor: pointer;
+}
+
+button.navBtn:hover {
+    background-color: #d6d6d6;
+    box-shadow: 0px 0px 3px 0px grey;
+    color: #333;
+}
+
+button.navBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
